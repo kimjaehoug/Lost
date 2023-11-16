@@ -6,67 +6,42 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    tools:context=".MainActivity"
     android:weightSum="3"
     >
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:fontFamily="@font/kanit"
-        android:text="LOST"
+        android:fontFamily="@font/inter"
+        android:text="회원가입"
         android:textStyle="bold"
         android:textColor="@color/black"
-        android:textSize="48sp"
+        android:textSize="24sp"
         android:layout_gravity="center"
         />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="23dp"
-        android:text="이메일"
+        android:layout_marginTop="93dp"
+        android:text="회원가입 완료 되었습니다"
         android:fontFamily="@font/inter"
         android:textColor="@color/black"
-        android:textSize="13sp"
-        android:layout_gravity="left"
-        android:layout_marginLeft="50dp"
-        />
-
-    <EditText
-        android:layout_width="318dp"
-        android:layout_height="wrap_content"
-        android:hint="  이메일을 입력하세요"
-        android:id="@+id/etemail"
-        android:textColorHint="#B6B6B6"
-        android:inputType="text"
-        android:textSize="13sp"
-        android:background="@drawable/enter_box"
+        android:textSize="25sp"
+        android:textStyle="bold"
         android:layout_gravity="center"
-        android:layout_marginTop="4dp"
         />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="23dp"
-        android:text="비밀번호"
+        android:text="감사합니다 LOST님"
         android:fontFamily="@font/inter"
         android:textColor="@color/black"
-        android:textSize="13sp"
-        android:layout_gravity="left"
-        android:layout_marginLeft="50dp"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
         />
 
-    <EditText
-        android:layout_width="318dp"
-        android:layout_height="wrap_content"
-        android:hint="  비밀번호를 입력하세요"
-        android:id="@+id/etPwd"
-        android:textColorHint="#B6B6B6"
-        android:inputType="text"
-        android:textSize="13sp"
-        android:background="@drawable/enter_box"
-        android:layout_gravity="center"
-        android:layout_marginTop="4dp"
-        />
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -84,7 +59,7 @@
             //로그인 버튼
 
             <Button
-                android:id="@+id/btn_login"
+                android:id="@+id/login_button"
                 android:layout_width="match_parent"
                 android:layout_height="49dp"
                 android:layout_gravity="center"
@@ -93,8 +68,8 @@
                 android:layout_weight="1"
                 android:background="@drawable/login_and_register_box"
                 android:orientation="vertical"
-                android:text="로그인"
                 android:textStyle="bold"
+                android:text="로그인"
                 android:textColor="#FFFFFF"
                 android:textSize="20dp"
                 android:layout_marginBottom="100dp"
@@ -103,7 +78,7 @@
             //회원가입 버튼
 
             <Button
-                android:id="@+id/btn_register"
+                android:id="@+id/register_button"
                 android:layout_width="match_parent"
                 android:layout_height="49dp"
                 android:layout_gravity="center"
@@ -112,8 +87,8 @@
                 android:layout_weight="1"
                 android:background="@drawable/login_and_register_box"
                 android:orientation="vertical"
-                android:text="회원가입"
                 android:textStyle="bold"
+                android:text="메인화면"
                 android:textColor="#FFFFFF"
                 android:textSize="20dp"
                 android:layout_marginBottom="100dp"

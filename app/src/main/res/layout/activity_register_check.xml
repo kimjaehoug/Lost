@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1"
+    android:id="@+id/checkl"
+    >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/inter"
+        android:text="회원가입"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:layout_gravity="center"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:fontFamily="@font/inter"
+        android:text="다음 내용에 동의해주세요."
+        android:textSize="24sp"
+        android:textColor="#636363"
+        android:layout_gravity="center"
+        />
+    <CheckBox
+        android:id="@+id/allcheck"
+        android:layout_width="332dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="45dp"
+        android:background="@drawable/register_graybox"
+        android:text="모두 동의"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:gravity="center|left"
+        android:layout_gravity="center"
+        />
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="31dp"
+        android:layout_marginLeft="37dp"
+        android:fontFamily="@font/inter"
+        android:text="이용약관 필수 동의 (필수)"
+        android:textSize="15sp"
+        android:textColor="#000000"
+        android:id="@+id/check1"
+        />
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="31dp"
+        android:layout_marginLeft="37dp"
+        android:fontFamily="@font/inter"
+        android:text="개인정보 처리방침 필수 동의 (필수)"
+        android:textSize="15sp"
+        android:textColor="#000000"
+        android:id="@+id/check2"
+        />
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="31dp"
+        android:layout_marginLeft="37dp"
+        android:fontFamily="@font/inter"
+        android:text="위치정보 이용 약관 필수 동의 (필수)"
+        android:textSize="15sp"
+        android:textColor="#000000"
+        android:id="@+id/check3"
+        />
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="59dp"
+        android:background="#A1A0E1"
+        android:textStyle="bold"
+        android:text="다음"
+        android:id="@+id/next"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        />
+
+
+
+
+</LinearLayout>

@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.myapplication.ui.MainView;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -49,7 +50,7 @@ public class lostlogin extends AppCompatActivity {
 
                         if(task.isSuccessful()){
                             //로그인 성공
-                            ;Intent intent = new Intent(lostlogin.this, MapsActivity.class);
+                            ;Intent intent = new Intent(lostlogin.this, MainView.class);
                             startActivity(intent);
                             finish();
                         }else{
@@ -63,7 +64,7 @@ public class lostlogin extends AppCompatActivity {
         mBtnRegister.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                Intent intent = new Intent(lostlogin.this, register.class);
+                Intent intent = new Intent(lostlogin.this, register_check.class);
                 startActivity(intent);
             }
         });
