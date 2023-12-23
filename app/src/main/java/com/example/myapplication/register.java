@@ -24,13 +24,14 @@ public class register extends AppCompatActivity {
     private DatabaseReference mDatabaseRef; //실시간 데이터 베이스
     private EditText mEtEmail, mEtPwd;
     private Button mBtnRegister;
+    private FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        mFirebaseAuth = FirebaseAuth .getInstance();
+        mFirebaseAuth = FirebaseAuth.getInstance();
         mDatabaseRef = FirebaseDatabase.getInstance().getReference();
 
         mEtEmail = findViewById(R.id.et_email);
@@ -40,7 +41,7 @@ public class register extends AppCompatActivity {
         mBtnRegister.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                //회원가입 처리 시작
+                //회원가입 처리 시작 이메일과 패스워드 칸에 있는 내용을 읽음
                 String strEmail = mEtEmail.getText().toString();
                 String strPwd = mEtPwd.getText().toString();
 
@@ -55,9 +56,14 @@ public class register extends AppCompatActivity {
                             account.setEmailId(firebaseUser.getEmail());
                             account.setPassword(strPwd);
 
+                            // Intent로부터 닉네임을 가져옴
+                            String nickname = getIntent().getStringExtra("nickname");
+                            account.setNickname(nickname);
+
                             mDatabaseRef.child("UserAccount").child(firebaseUser.getUid()).setValue(account);
                             Toast.makeText(register.this, "회원가입에 성공했습니다", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(register.this, register_finish_rr.class);
+                            intent.putExtra("nickname", nickname);
                             startActivity(intent);
                         }else{
                             Toast.makeText(register.this, "회원가입에 실패했습니다", Toast.LENGTH_SHORT).show();
@@ -66,9 +72,6 @@ public class register extends AppCompatActivity {
                     }
                 });
             }
-        }
-
-
-        );
+        });
     }
 }

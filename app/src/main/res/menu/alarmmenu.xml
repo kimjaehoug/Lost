@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/locationalarm"
+        android:enabled="true"
+        android:title="근처 알림" />
+    <item
+        android:id="@+id/activityalarm"
+        android:enabled="true"
+        android:title="활동 알림" />
+</menu>

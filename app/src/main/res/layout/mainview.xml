@@ -6,15 +6,53 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.MainView">
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/main_frame"
-    />
-<com.google.android.material.bottomnavigation.BottomNavigationView
+
+    <Button
+        android:id="@+id/allmenu"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:background="@drawable/baseline_menu_24"
+        app:backgroundTint="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/main_frame"
+        app:layout_constraintEnd_toEndOf="@+id/main_frame"
+        app:layout_constraintHorizontal_bias="0.85"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.02" />
+
+    <Button
+        android:id="@+id/alarm"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:background="@drawable/ic_notifications_black_24dp"
+        app:backgroundTint="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/main_frame"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.02" />
+    <FrameLayout
+        android:id="@+id/main_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" >
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="@style/ToolbarStyle" />
+    </FrameLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
 android:id="@+id/mainebottom"
 android:layout_width="match_parent"
 android:layout_height="wrap_content"
@@ -25,4 +63,6 @@ app:layout_constraintStart_toStartOf="parent"
 app:layout_constraintTop_toTopOf="parent"
 app:layout_constraintVertical_bias="1.0"
 app:menu="@menu/menu" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

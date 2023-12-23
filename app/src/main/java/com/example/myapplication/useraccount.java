@@ -2,7 +2,16 @@ package com.example.myapplication;
 
 public class useraccount {
 
+    private String nickname;
+
     public useraccount(){
+    }
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
+
+    public String getNickname() {
+        return nickname;
     }
 
 

@@ -31,7 +31,7 @@ import java.io.ByteArrayOutputStream;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Reportview extends AppCompatActivity implements View.OnClickListener {
+public class PostActivity extends AppCompatActivity implements View.OnClickListener {
 
     private FirebaseFirestore mStore = FirebaseFirestore.getInstance();
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
@@ -115,10 +115,10 @@ public class Reportview extends AppCompatActivity implements View.OnClickListene
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()) {
-                                Toast.makeText(Reportview.this, "게시물이 저장되었습니다.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(PostActivity.this, "게시물이 저장되었습니다.", Toast.LENGTH_SHORT).show();
                                 finish();
                             } else {
-                                Toast.makeText(Reportview.this, "게시물 저장에 실패했습니다.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(PostActivity.this, "게시물 저장에 실패했습니다.", Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
@@ -130,7 +130,6 @@ public class Reportview extends AppCompatActivity implements View.OnClickListene
 
     private void uploadImageAndSavePost(final String postId, final String title, final String contents) {
         StorageReference storageRef = FirebaseStorage.getInstance().getReference().child("images/" + postId + ".jpg");
-        // 여기에서 이미지 파일의 Uri를 넣어주어야 합니다.
         UploadTask uploadTask = storageRef.putFile(getImageUri(context, sendimage));
 
         uploadTask.continueWithTask(task -> {
@@ -160,14 +159,14 @@ public class Reportview extends AppCompatActivity implements View.OnClickListene
         mStore.collection("posts").document(postId).set(data, SetOptions.merge())
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
-                        Toast.makeText(Reportview.this, "게시물이 저장되었습니다.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(PostActivity.this, "게시물이 저장되었습니다.", Toast.LENGTH_SHORT).show();
                         finish();
                     } else {
-                        Toast.makeText(Reportview.this, "게시물 저장에 실패했습니다.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(PostActivity.this, "게시물 저장에 실패했습니다.", Toast.LENGTH_SHORT).show();
                     }
                 });
     }
-//이게 머냐면 bitmap을 uri이걸로 바꿔줌.
+
     private Uri getImageUri(Context context, Bitmap inImage) {
         ByteArrayOutputStream bytes = new ByteArrayOutputStream();
         inImage.compress(Bitmap.CompressFormat.JPEG, 100, bytes);

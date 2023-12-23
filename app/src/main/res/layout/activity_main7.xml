@@ -1,0 +1,78 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/profileEdit_Title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="프로필 수정"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:background="@drawable/edge"
+        />
+
+    <ImageView
+        android:id="@+id/profileImageButton"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/profile_image"
+        android:scaleType="centerCrop"
+        android:layout_below="@id/profileEdit_Title"
+        />
+
+    <Button
+        android:id="@+id/selectImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="이미지 선택"
+        android:layout_below="@id/profileImageButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        />
+
+    <TextView
+        android:id="@+id/emailLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="이메일"
+        android:textSize="13sp"
+        android:textColor="@color/black"
+        android:layout_below="@id/selectImageButton"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="20dp"
+        />
+
+    <EditText
+        android:id="@+id/emailEditText"
+        android:layout_width="380dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/emailLabel"
+        android:layout_marginTop="8dp"
+        android:inputType="textEmailAddress"
+        android:hint="  이메일을 입력하세요"
+        android:textSize="13sp"
+        android:textColorHint="#B6B6B6"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/enter_box"
+        />
+
+    <Button
+        android:id="@+id/save_button"
+        android:layout_width="match_parent"
+        android:layout_height="59dp"
+        android:background="#A1A0E1"
+        android:textStyle="bold"
+        android:text="저장"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:layout_alignParentBottom="true"
+        />
+
+</RelativeLayout>
